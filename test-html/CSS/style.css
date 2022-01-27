@@ -1,0 +1,97 @@
+:root{
+    --main-radius:0.5rem
+}
+
+.container{
+display: grid;
+height:100vh;
+grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+grid-template-rows: 1fr 1fr 1fr 1fr;
+grid-template-areas: 
+"nav nav nav nav nav nav"
+"sidebar text text text text text"
+"sidebar content1 content2 content3 content4 content5"
+"footer footer footer footer footer footer";
+grid-gap: 0.5rem;
+font-weight: 800;
+color: #fff;
+font-size: 1rem;
+text-align: center;
+}
+.container *{
+    padding-top: 1rem;
+}
+nav{
+    background-color: #ffb41e;
+    grid-area: nav;
+    border-radius: var(--main-radius);
+}
+.text{
+    background-color: #5598fd;
+    grid-area: text;
+    border-radius: var(--main-radius);
+}
+.sidebar{
+    background-color: #21d168;
+    grid-area: sidebar;
+    border-radius: var(--main-radius);
+}
+.card{
+    background-color: #0e5d88;
+    border-radius: var(--main-radius);
+}
+#content1{
+    grid-area: content1;
+}
+#content2{
+    grid-area: content2;
+}
+#content3{
+    grid-area: content3;
+}
+#content4{
+    grid-area: content4;
+}
+#content5{
+    grid-area: content5;
+}
+
+footer{
+    background-color: #5598fd;
+    grid-area: footer;
+    border-radius: var(--main-radius);
+}
+@media only screen and (max-width:80rem){
+    .container{
+        grid-template-columns: 1fr 1fr 1fr ;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+            "nav nav nav"
+            "sidebar text text"
+            "sidebar content1 content2"
+            "sidebar content3 content4"
+            "footer footer footer";
+    }
+    #content5{
+        display: none;
+    }
+}
+@media only screen and (max-width:40rem){
+    .container{
+        grid-template-columns: 1fr  ;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+            "nav"
+            "sidebar"
+            "text"
+            "content1"
+            "content2"
+            "content3"
+            "content4"
+            "content5"
+            "footer";
+    }
+    #content5{
+        display: initial;
+    }
+}
